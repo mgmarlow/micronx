@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "nx": "nx",
-    "start": "nx run-many --target=serve --projects=container,dashboard,settings",
+    "start": "concurrently \"nx run container:serve\" \"nx run dashboard:serve --port=3001\" \"nx run settings:serve --port=3002\"",
     "build": "nx build",
     "test": "nx test",
     "lint": "nx workspace-lint && nx lint",
@@ -28,6 +28,7 @@
   "private": true,
   "dependencies": {
     "@types/react-router-dom": "^5.1.8",
+    "concurrently": "^6.2.0",
     "core-js": "^3.6.5",
     "document-register-element": "1.13.1",
     "react": "17.0.2",

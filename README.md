@@ -4,15 +4,10 @@ A demo application for conventional micro frontend architecture, based on the [T
 
 ## Running the micro frontend example
 
-(wip) set up a better way of running this commands together.
-
 Run the entire application:
 
 ```
-# run these concurrently
-nx run container:serve
-nx run dashboard:serve --port=3001
-nx run settings:serve --port=3002
+yarn start
 ```
 
 Run a micro frontend on its own:
